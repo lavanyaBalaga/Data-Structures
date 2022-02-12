@@ -1,0 +1,13 @@
+SinglyLinkedListNode* deleteNode(SinglyLinkedListNode* llist, int position) {
+    SinglyLinkedListNode*temp=malloc(sizeof(SinglyLinkedListNode));
+    temp=llist;
+    if(position==0)
+    {
+        return llist->next;
+    }
+    for(int i=0;i<position-1;i++){
+        temp=temp->next;
+    }
+    temp->next=temp->next->next;
+    return llist;
+}
