@@ -1,0 +1,17 @@
+//Hacker rank limked lists:
+
+
+
+void printLinkedList(SinglyLinkedListNode* head) {
+    if(head==NULL)
+    {
+        printf("emoty list");
+    }
+    else{
+        while(head){
+       printf("%d\n",head->data); 
+       head=head->next;
+    }
+    }
+}
+
