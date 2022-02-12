@@ -1,0 +1,36 @@
+
+
+DoublyLinkedListNode* sortedInsert(DoublyLinkedListNode* llist, int data) {
+  DoublyLinkedListNode* temp=llist,*newn,*q;
+        newn = (DoublyLinkedListNode*)malloc(sizeof(DoublyLinkedListNode));
+        newn->data=data;
+    if(llist== NULL) return newn;
+    if(llist->data > newn->data)
+    {
+       newn->next=temp;
+       temp->prev=newn;
+       newn->prev=NULL;
+       return newn;
+    }
+     while(temp!=NULL)
+     {
+         if(newn->data<temp->data)
+         {
+             q=temp->prev;
+             temp->prev=newn;
+             newn->next=temp;
+             newn->prev=q;
+             q->next=newn;
+             return llist;
+         }
+         if(temp->next==NULL)
+         {
+             temp->next=newn;
+            newn->prev=temp;
+            newn->next=NULL;
+         }
+         temp=temp->next;
+     }
+       
+    return llist;
+}
