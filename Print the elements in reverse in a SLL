@@ -1,0 +1,17 @@
+void reversePrint(SinglyLinkedListNode* llist) {
+    SinglyLinkedListNode* temp=malloc(sizeof(SinglyLinkedListNode));
+    SinglyLinkedListNode* p=malloc(sizeof(SinglyLinkedListNode));
+    temp=llist;
+    int i=0,a[1000];
+    while(temp->next!=NULL)
+    {
+      a[i]=temp->data;
+      i++;
+      temp=temp->next;  
+    }
+    a[i]=temp->data;
+    for(int j=i;j>=0;j--)
+    {
+     printf("%d\n",a[j]);   
+    }
+}
