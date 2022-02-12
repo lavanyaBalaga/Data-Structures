@@ -1,0 +1,16 @@
+DoublyLinkedListNode* reverse(DoublyLinkedListNode* head) {
+DoublyLinkedListNode*temp=head,*nn,*tail=head;
+while(tail->next!=NULL)
+{
+    tail=tail->next;
+}
+while(temp!=NULL)
+{
+    nn=temp->next;
+    temp->next=temp->prev;
+    temp->prev=nn;
+    temp=nn;
+}
+head=tail;
+return head;
+}
