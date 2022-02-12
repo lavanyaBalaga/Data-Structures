@@ -1,0 +1,15 @@
+//CYCLE DETECTION FROM HACKER RANK
+
+
+bool has_cycle(SinglyLinkedListNode* head) {
+    int c=0;
+    SinglyLinkedListNode* temp=head;
+    while(temp!=NULL)
+    {
+        temp=temp->next;
+        c++;
+        if(c>1000)
+        return 1;
+    }
+    return 0;
+}
